@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,12 +10,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html, body {
             height: 100%;
             overflow-x: hidden;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
@@ -24,1041 +21,104 @@
             min-height: 100vh;
             padding: 15px;
         }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15);
-            animation: slideIn 0.4s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .black-bg {
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: white;
-        }
-
-        h2 {
-            color: #785f03;
-            font-size: 22px;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .section p {
-            color: #785f03;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .black-bg p, .black-bg .countdown-label {
-            color: #ffd700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .anamola-header {
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            border-left: 5px solid #785f03;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .anamola-header h1 {
-            color: #ffd700;
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .anamola-header p {
-            color: #ffd700;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .roleta-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            position: relative;
-        }
-
-        #roleta {
-            max-width: 280px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(9, 102, 45, 0.3);
-            transition: transform 0.1s linear;
-            will-change: transform;
-        }
-
-        .pointer {
-            position: absolute;
-            top: -12px;
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-top: 20px solid #785f03;
-            z-index: 10;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        }
-
-        .btn-girar {
-            display: block;
-            margin: 20px auto;
-            padding: 16px 45px;
-            font-size: 18px;
-            font-weight: bold;
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: #ffd700;
-            border: 3px solid #785f03;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-girar:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(9, 102, 45, 0.6);
-        }
-
-        .btn-girar:active:not(:disabled) {
-            transform: translateY(0);
-        }
-
-        .btn-girar:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 15px;
-        }
-
-        .countdown-item {
-            text-align: center;
-        }
-
-        .countdown-number {
-            display: block;
-            font-size: 40px;
-            font-weight: bold;
-            color: #ffd700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .countdown-label {
-            display: block;
-            font-size: 12px;
-            margin-top: 3px;
-        }
-
-        .white-bg {
-            background: white;
-        }
-
-        .instructions ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .instructions li {
-            color: #785f03;
-            font-size: 15px;
-            margin: 10px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .instructions li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #09662d;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .prize-list {
-            display: grid;
-            gap: 10px;
-        }
-
-        .prize-list p {
-            background: rgba(9, 102, 45, 0.1);
-            padding: 12px;
-            border-left: 4px solid #785f03;
-            border-radius: 5px;
-            color: #785f03;
-            font-size: 15px;
-        }
-
-        .share-section {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15);
-            border-top: 5px solid #09662d;
-        }
-
-        .share-section h2 {
-            color: #09662d;
-        }
-
-        .share-section p {
-            color: #785f03;
-        }
-
-        .share-section a {
-            color: #09662d;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .share-input {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 2px solid #09662d;
-        }
-
-        #shareText {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #785f03;
-            border-radius: 6px;
-            font-size: 13px;
-            color: #785f03;
-        }
-
-        .copy-btn {
-            background: #09662d;
-            color: #ffd700;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 8px;
-            transition: all 0.2s ease;
-            font-size: 14px;
-        }
-
-        .copy-btn:hover {
-            background: #0d8c3d;
-            transform: translateY(-1px);
-        }
-
-        .whatsapp-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: #ffd700;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: all 0.2s ease;
-            box-shadow: 0 5px 15px rgba(9, 102, 45, 0.3);
-            font-size: 14px;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4);
-        }
-
-        .footer {
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: #ffd700;
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 15px;
-            box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15);
-        }
-
-        .footer p {
-            margin: 8px 0;
-            color: #ffd700;
-            font-size: 12px;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .popup-content {
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            padding: 35px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            border: 3px solid #785f03;
-            max-width: 90%;
-        }
-
-        .popup-content h3 {
-            color: #ffd700;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        #popupText {
-            color: #ffd700;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 15px 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            line-height: 1.6;
-        }
-
-        .btn {
-            background: #785f03;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 15px;
-            margin-right: 10px;
-            transition: all 0.2s ease;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-            background: #9a7d0a;
-        }
-
-        .btn-registro {
-            background: #ffd700;
-            color: #09662d;
-        }
-
-        .btn-registro:hover {
-            background: #e6c200;
-        }
-
-        /* Chat Widget Styles */
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            z-index: 999;
-        }
-
-        .chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 30px rgba(9, 102, 45, 0.6);
-        }
-
-        .chat-window {
-            display: none;
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            height: 500px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-            flex-direction: column;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.3s ease;
-        }
-
-        .chat-window.active {
-            display: flex;
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: #ffd700;
-            padding: 18px;
-            border-radius: 12px 12px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header h3 {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        .close-chat {
-            background: none;
-            border: none;
-            color: #ffd700;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-chat:hover {
-            opacity: 0.8;
-        }
-
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 15px;
-            background: #f5f5f5;
-        }
-
-        .message {
-            margin-bottom: 12px;
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .message.user {
-            justify-content: flex-end;
-        }
-
-        .message-bubble {
-            max-width: 80%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            word-wrap: break-word;
-            line-height: 1.4;
-            font-size: 14px;
-        }
-
-        .message.user .message-bubble {
-            background: #09662d;
-            color: white;
-            border-bottom-right-radius: 4px;
-        }
-
-        .message.bot .message-bubble {
-            background: white;
-            color: #333;
-            border: 1px solid #ddd;
-            border-bottom-left-radius: 4px;
-        }
-
-        .chat-input-area {
-            padding: 12px;
-            border-top: 1px solid #ddd;
-            display: flex;
-            gap: 8px;
-        }
-
-        .chat-input {
-            flex: 1;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 10px 16px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .chat-input:focus {
-            border-color: #09662d;
-        }
-
-        .send-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #09662d;
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: all 0.2s ease;
-        }
-
-        .send-btn:hover {
-            background: #0d8c3d;
-            transform: scale(1.05);
-        }
-
-        .claim-link {
-            color: #09662d;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .claim-link:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .section {
-                padding: 18px;
-                margin-bottom: 10px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            #roleta {
-                max-width: 220px;
-            }
-
-            .btn-girar {
-                padding: 14px 35px;
-                font-size: 16px;
-            }
-
-            .popup-content {
-                padding: 25px;
-            }
-
-            #popupText {
-                font-size: 14px;
-            }
-
-            .chat-window {
-                width: 280px;
-                height: 450px;
-            }
-        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); animation: slideIn 0.4s ease-out; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .black-bg { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: white; }
+        h2 { color: #785f03; font-size: 22px; margin-bottom: 12px; text-align: center; }
+        .section p { color: #785f03; font-size: 15px; line-height: 1.5; }
+        .black-bg p, .black-bg .countdown-label { color: #ffd700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+        .anamola-header { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); border-left: 5px solid #785f03; padding: 20px; border-radius: 10px; margin-bottom: 15px; text-align: center; }
+        .anamola-header h1 { color: #ffd700; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .anamola-header p { color: #ffd700; font-size: 13px; line-height: 1.6; }
+        .roleta-container { display: flex; justify-content: center; align-items: center; margin: 20px 0; position: relative; }
+        #roleta { max-width: 280px; height: auto; border-radius: 50%; box-shadow: 0 15px 40px rgba(9, 102, 45, 0.3); transition: transform 0.1s linear; will-change: transform; }
+        .pointer { position: absolute; top: -12px; width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #785f03; z-index: 10; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
+        .btn-girar { display: block; margin: 20px auto; padding: 16px 45px; font-size: 18px; font-weight: bold; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; border: 3px solid #785f03; border-radius: 50px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4); text-transform: uppercase; letter-spacing: 1px; }
+        .btn-girar:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(9, 102, 45, 0.6); }
+        .btn-girar:active:not(:disabled) { transform: translateY(0); }
+        .btn-girar:disabled { opacity: 0.6; cursor: not-allowed; }
+        .countdown { display: flex; justify-content: center; gap: 30px; margin-top: 15px; }
+        .countdown-item { text-align: center; }
+        .countdown-number { display: block; font-size: 40px; font-weight: bold; color: #ffd700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+        .countdown-label { display: block; font-size: 12px; margin-top: 3px; }
+        .white-bg { background: white; }
+        .instructions ul { list-style: none; padding-left: 0; }
+        .instructions li { color: #785f03; font-size: 15px; margin: 10px 0; padding-left: 25px; position: relative; }
+        .instructions li:before { content: "✓"; position: absolute; left: 0; color: #09662d; font-weight: bold; font-size: 18px; }
+        .prize-list { display: grid; gap: 10px; }
+        .prize-list p { background: rgba(9, 102, 45, 0.1); padding: 12px; border-left: 4px solid #785f03; border-radius: 5px; color: #785f03; font-size: 15px; }
+        .share-section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); border-top: 5px solid #09662d; }
+        .share-section h2 { color: #09662d; }
+        .share-section p { color: #785f03; }
+        .share-section a { color: #09662d; text-decoration: none; font-weight: bold; }
+        .share-input { background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px solid #09662d; }
+        #shareText { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #785f03; border-radius: 6px; font-size: 13px; color: #785f03; }
+        .copy-btn { background: #09662d; color: #ffd700; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 8px; transition: all 0.2s ease; font-size: 14px; }
+        .copy-btn:hover { background: #0d8c3d; transform: translateY(-1px); }
+        .whatsapp-btn { display: inline-block; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: all 0.2s ease; box-shadow: 0 5px 15px rgba(9, 102, 45, 0.3); font-size: 14px; }
+        .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4); }
+        .footer { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; text-align: center; padding: 20px; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); }
+        .footer p { margin: 8px 0; color: #ffd700; font-size: 12px; }
+        .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease; }
+        .popup-content { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); padding: 35px; border-radius: 18px; text-align: center; max-width: 400px; color: #ffd700; box-shadow: 0 10px 35px rgba(0,0,0,0.3); }
+        .popup-content h2 { margin-bottom: 15px; font-size: 24px; color: #ffd700; }
+        .popup-content p { margin-bottom: 20px; font-size: 15px; color: #ffd700; }
+        .popup-content button { padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 50px; border: none; cursor: pointer; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; transition: all 0.2s ease; }
+        .popup-content button:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
+        .popup.show { display: flex; opacity: 1; }
     </style>
 </head>
 <body>
-  
-
-        <!-- Seção de Introdução -->
-        <div class="section black-bg">
-            <p style="text-align: center; font-size: 18px;">
-                Tens 2 tentativas grátis para girar a roleta. Não custa nada, clique no botão girar!
-            </p>
+    <div class="container">
+        <div class="anamola-header">
+            <h1>ANAMOLA</h1>
+            <p>Gire a roleta e descubra o seu prêmio! Participe agora e ganhe!</p>
         </div>
 
-        <!-- Seção da Roleta -->
-        <div class="section">
-            <h2>🎲 Tente a sua sorte! 🎲</h2>
-            <p>Clique no botão e gire a roleta para ganhar prêmios!</p>
-            
-            <div class="roleta-container">
-                <img src="https://dollarzoneteam.com/roleta/roleta.png" alt="Roleta" id="roleta">
-                <div class="pointer"></div>
-            </div>
-            
-            <button id="girarBtn" class="btn-girar" onclick="girarRoleta()">
-                🎮 GIRAR
-            </button>
+        <div class="section roleta-container">
+            <div class="pointer"></div>
+            <img src="roleta.png" id="roleta" alt="Roleta">
         </div>
 
-        <!-- Timer -->
-        <div class="section black-bg">
-            <p style="font-style: italic;">⏳ Você tem 01:59 para girar e garantir sua chance gratuita!</p>
-            
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">02</span>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">39</span>
-                    <span class="countdown-label">Segundos</span>
-                </div>
-            </div>
-        </div>
+        <button class="btn-girar" id="btnGirar">GIRAR</button>
 
-        <!-- Instruções -->
-        <div class="section white-bg">
-            <h2>Chegou sua vez de ganhar!</h2>
-            <div class="instructions">
-                <ul>
-                    <li>Para começar, basta apertar o botão escrito <strong>GIRAR</strong>!</li>
-                    <li>💡 <strong>Você tem 2 tentativas totalmente grátis!</strong></li>
-                    <li>A roleta está cheia de prêmios esperando por você!</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Prêmios -->
-        <div class="section black-bg">
-            <h2>🎁 Prêmios da Roleta da Sorte</h2>
-            <div class="prize-list">
-                <p>✅ <strong>10 Meticais</strong> – Comece com sorte!</p>
-                <p>✅ <strong>100 Meticais</strong> – Já dá pra comemorar!</p>
-                <p>✅ <strong>500 Meticais</strong> – Subindo o nível!</p>
-                <p>✅ <strong>1.000 Meticais</strong> – Agora sim!</p>
-                <p>✅ <strong>5.000 Meticais</strong> – Sorte grande!</p>
-                <p>✅ <strong>10.000 Meticais</strong> – O prêmio dos sonhos! 💸</p>
-            </div>
-        </div>
-
-        <!-- Compartilhamento -->
-        <div class="share-section">
-            <h2>🎯 GANHE MAIS GIROS GRÁTIS!</h2>
-            <p>
-                Compartilhe o site <strong><a href="https://roleta-green-da-sorte.vercel.app" target="_blank">ANAMOLA Prêmios</a></strong> com seus amigos e familiares por WhatsApp, SMS, Telegram, ou redes sociais e ganhe <strong>+1 giro grátis</strong> a cada pessoa!
-            </p>
-
-            <div class="share-input">
-                <p style="margin: 0; font-size: 15px; color: #555;">💬 Frase pronta para enviar:</p>
-                <input id="shareText" type="text" readonly value="🚀 Acabei de girar uma roleta e ganhei um prêmio! Você também pode ganhar até 10.000 MT grátis com ANAMOLA Prêmios. Entra aqui: https://roleta-green-da-sorte.vercel.app">
-                <button onclick="copyText()" class="copy-btn">📋 Copiar mensagem</button>
-            </div>
-
-            <a href="https://api.whatsapp.com/send?text=%F0%9F%9A%80%20Acabei%20de%20girar%20uma%20roleta%20e%20ganhei%20um%20pr%C3%AAmio!%20Voc%C3%AA%20tamb%C3%A9m%20pode%20ganhar%20at%C3%A9%2010.000%20MT%20gr%C3%A1tis%20com%20ANAMOLA%20Pr%C3%AAmios.%20Entra%20aqui:%20https://roleta-green-da-sorte.vercel.app" target="_blank" class="whatsapp-btn">
-                📲 Compartilhar no WhatsApp
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p><strong>Termos de Uso e Direitos Reservados</strong></p>
-            <p><em>© 2025 ANAMOLA – Todos os direitos reservados.</em></p>
-            <p style="margin-top: 15px; font-size: 10px; line-height: 1.4;">
-                A presente simulação interativa tem como principal finalidade o estímulo à participação em ofertas promocionais vinculadas a plataformas externas. Os valores exibidos na roleta não representam prêmios efetivamente creditáveis, estando sua disponibilização condicionada à conclusão de processos de adesão e validação por parte de terceiros. A exibição de montantes possui caráter meramente demonstrativo, sem constituição de obrigação por parte deste domínio ou seus parceiros comerciais.
-            </p>
-            <p style="font-size: 10px;">Este conteúdo está protegido pelas normas de propriedade intelectual. A utilização indevida está sujeita às penalidades legais aplicáveis.</p>
+        <div class="section instructions">
+            <h2>Como Participar:</h2>
+            <ul>
+                <li>Clique em "GIRAR" para iniciar a roleta.</li>
+                <li>Espere a roleta parar e veja qual prêmio você ganhou.</li>
+                <li>Clique em "Registrar Agora" para resgatar seu prêmio.</li>
+            </ul>
         </div>
     </div>
 
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-        <button class="chat-button" onclick="toggleChat()">💬</button>
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <h3>🤖 Suporte ANAMOLA</h3>
-                <button class="close-chat" onclick="toggleChat()">✕</button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot">
-                    <div class="message-bubble">Olá! 👋 Como posso ajudá-lo? Clique aqui para <strong>fazer uma reclamação</strong> ou tire suas dúvidas.</div>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem..." onkeypress="handleKeyPress(event)">
-                <button class="send-btn" onclick="sendMessage()">➤</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Popup -->
-    <div id="popup" class="popup">
+    <div class="popup" id="popup">
         <div class="popup-content">
-            <h3>🎉 Resultado 🎉</h3>
-            <p id="popupText"></p>
-            <button id="girarNovamente" class="btn" onclick="fecharPopUpEGirar()" style="display:none;">
-                🔄 Girar Novamente
-            </button>
-            <button id="popupButton" class="btn btn-registro" onclick="redirectToRegistration()" style="display:none;">
-                ✅ Registrar Agora
-            </button>
+            <h2>🎉 Parabéns! 🎉</h2>
+            <p>Você ganhou! Clique abaixo para registrar seu prêmio agora.</p>
+            <button id="registrar">Registrar Agora</button>
         </div>
     </div>
-
-    <!-- Áudios -->
-    <audio id="roletaSom" src="https://raw.githubusercontent.com/FUTURE098/audio-roleta/main/Roleta.mp3"></audio>
-    <audio id="victorySom" src="https://raw.githubusercontent.com/FUTURE098/audio-roleta/main/Celebration.mp3" preload="auto"></audio>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 
     <script>
-        let tentativas = 0;
-        let countdownTime = 159;
-        let countdownInterval;
+        const btnGirar = document.getElementById("btnGirar");
+        const roleta = document.getElementById("roleta");
+        const popup = document.getElementById("popup");
+        const registrarBtn = document.getElementById("registrar");
 
-        function toggleChat() {
-            const chatWindow = document.getElementById('chatWindow');
-            chatWindow.classList.toggle('active');
-            if (chatWindow.classList.contains('active')) {
-                document.getElementById('chatInput').focus();
-            }
-        }
-
-        function sendMessage() {
-            const chatInput = document.getElementById('chatInput');
-            const message = chatInput.value.trim();
-
-            if (!message) return;
-
-            addMessage(message, 'user');
-            chatInput.value = '';
-
+        btnGirar.addEventListener("click", () => {
+            const deg = Math.floor(Math.random() * 360);
+            roleta.style.transform = `rotate(${deg + 720}deg)`; // gira 2 voltas + grau aleatório
+            btnGirar.disabled = true;
             setTimeout(() => {
-                const botResponse = generateBotResponse(message);
-                addMessage(botResponse, 'bot');
-            }, 500);
-        }
-
-        function addMessage(text, sender) {
-            const chatMessages = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}`;
-            messageDiv.innerHTML = `<div class="message-bubble">${text}</div>`;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function generateBotResponse(userMessage) {
-            const message = userMessage.toLowerCase();
-
-            if (message.includes('reclamar') || message.includes('reclamação') || message.includes('problema')) {
-                return `⏳ Entendido! Ainda estamos analisando sua situação.<br><br>
-                        <strong>Certifique-se se já fez o cadastro na plataforma e fez o depósito necessário!</strong><br><br>
-                        ❌ Se ainda não se registrou, <a href="https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=" class="claim-link" target="_blank">clique aqui para se cadastrar</a>.<br><br>
-                        📝 Após o cadastro e depósito, aguarde nosso retorno em breve!`;
-            }
-
-            if (message.includes('giros') || message.includes('girar')) {
-                return `🎲 Você tem <strong>2 tentativas grátis</strong> para girar a roleta! Suba na página e clique no botão <strong>GIRAR</strong>.<br><br>
-                        💡 Ganhe mais giros compartilhando o site com seus amigos!`;
-            }
-
-            if (message.includes('prêmio') || message.includes('premio')) {
-                return `🎁 Os prêmios variam de <strong>10 MT a 10.000 MT</strong>!<br><br>
-                        Para receber seu prêmio, você deve:<br>
-                        1. Se registrar na plataforma<br>
-                        2. Fazer o depósito necessário<br>
-                        3. Aguardar nossa confirmação<br><br>
-                        <a href="https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=" class="claim-link" target="_blank">Registre-se agora</a>`;
-            }
-
-            if (message.includes('cadastro') || message.includes('registrar')) {
-                return `✅ Para se registrar e receber seu prêmio:<br><br>
-                        1. Clique <a href="https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=" class="claim-link" target="_blank">aqui</a> para acessar o cadastro<br>
-                        2. Preencha seus dados<br>
-                        3. Faça um depósito de 20 ou 50 Meticais<br>
-                        4. Seu prêmio será entregue à sua carteira móvel!<br><br>
-                        ⚠️ Cada conta só pode receber um prêmio uma vez!`;
-            }
-
-            if (message.includes('depósito') || message.includes('deposito')) {
-                return `💰 O depósito necessário é de <strong>20 ou 50 Meticais</strong>!<br><br>
-                        Este depósito é para confirmar seu número e garantir que você é um usuário real.<br><br>
-                        Após o depósito e confirmação, seu prêmio será creditado na sua carteira móvel!<br><br>
-                        <a href="https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=" class="claim-link" target="_blank">Vá para o cadastro</a>`;
-            }
-
-            if (message.includes('como funciona') || message.includes('ajuda')) {
-                return `📖 <strong>Como funciona o ANAMOLA Prêmios:</strong><br><br>
-                        1. 🎲 Gire a roleta (2 tentativas grátis)<br>
-                        2. 🎁 Ganhe um prêmio entre 10 MT e 10.000 MT<br>
-                        3. ✍️ Registre-se na plataforma<br>
-                        4. 💳 Faça um depósito de validação (20 ou 50 MT)<br>
-                        5. 💸 Receba seu prêmio na carteira móvel<br><br>
-                        Tem dúvidas? Estou aqui para ajudar!`;
-            }
-
-            return `⏳ Obrigado por sua mensagem!<br><br>
-                    Ainda estamos analisando sua situação.<br><br>
-                    <strong>Certifique-se se já fez o cadastro na plataforma e fez o depósito necessário!</strong><br><br>
-                    Se não se registrou ainda, <a href="https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c="_blank">clique aqui</a>.<br><br>
-                    Nossa equipe retornará em breve! 🙏`;
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
-
-        function girarRoleta() {
-            const roleta = document.getElementById('roleta');
-            const som = document.getElementById('roletaSom');
-            let anguloFinal = 0;
-            let tempoGiro = 0;
-            
-            tentativas++;
-
-            if (tentativas === 1) {
-                anguloFinal = 320 + 16 * 360;
-                tempoGiro = 9;
-            } else if (tentativas === 2) {
-                anguloFinal = 240 + 24 * 360;
-                tempoGiro = 8;
-            } else {
-                return;
-            }
-
-            playRoletaSound(som);
-            applyRotation(roleta, anguloFinal, tempoGiro);
-            toggleGirarButton(true);
-            fadeOutSound(som, tempoGiro);
-            
-            setTimeout(() => {
-                som.pause();
-                setTimeout(showPopUp, 500);
-            }, tempoGiro * 1000);
-        }
-
-        function playRoletaSound(som) {
-            som.currentTime = 0;
-            som.volume = 1;
-            som.play().catch(error => {
-                console.log('Erro ao reproduzir som:', error);
-            });
-        }
-
-        function applyRotation(roleta, angulo, tempo) {
-            roleta.style.transition = `transform ${tempo}s cubic-bezier(0.1, 0.8, 0.3, 1)`;
-            roleta.style.transform = `rotate(${angulo}deg)`;
-        }
-
-        function fadeOutSound(som, tempoGiro) {
-            let steps = 40;
-            let delay = (tempoGiro * 1000) / steps;
-            let stepCount = 0;
-
-            const volumeFade = setInterval(() => {
-                if (stepCount >= steps) {
-                    clearInterval(volumeFade);
-                } else {
-                    som.volume = Math.max(0, 1 - stepCount / steps);
-                    stepCount++;
-                }
-            }, delay);
-        }
-
-        function toggleGirarButton(disabled) {
-            const botao = document.getElementById('girarBtn');
-            botao.disabled = disabled;
-        }
-
-        function showPopUp() {
-            const popup = document.getElementById('popup');
-            const popupText = document.getElementById('popupText');
-            const botaoGirar = document.getElementById('girarNovamente');
-            const botaoRegistro = document.getElementById('popupButton');
-            
-            let texto = "";
-
-            if (tentativas === 1) {
-                texto = "❌ Não foi dessa vez!<br>Você tem mais 1 chance.<br>Clique no botão abaixo e gire novamente!";
-                botaoGirar.style.display = "inline-block";
-                botaoRegistro.style.display = "none";
-            } else if (tentativas === 2) {
-                texto = "🤙 Parabéns! Você ganhou <b>5.000 Meticais</b>!<br><br>"
-                    + "Para receber, registre-se na plataforma clicando no botão abaixo e <b>deposite 20 ou 50 Meticais</b> para que possamos confirmar seu número e enviar o valor.<br><br>"
-                    + "⚠️ <b>O prêmio só será entregue para quem criar uma nova conta na plataforma.</b><br>"
-                    + "Se já possui uma conta, é necessário criar uma nova para receber o valor na sua carteira móvel!";
-                botaoGirar.style.display = "none";
-                botaoRegistro.style.display = "inline-block";
-                playVictoryEffects();
-            }
-
-            popupText.innerHTML = texto;
-            popup.style.display = 'flex';
-            
-            setTimeout(() => {
-                popup.style.opacity = '1';
-            }, 10);
-        }
-
-        function playVictoryEffects() {
-            const victory = document.getElementById('victorySom');
-            victory.currentTime = 0;
-            victory.play().catch(error => {
-                console.log('Erro ao reproduzir som de vitória:', error);
-            });
-
-            startConfetti();
-        }
-
-        function startConfetti() {
-            if (typeof confetti === 'undefined') {
-                console.log('Biblioteca de confetes não carregada');
-                return;
-            }
-
-            const duration = 3 * 1000;
-            const end = Date.now() + duration;
-            
-            (function frame() {
-                confetti({ 
-                    particleCount: 5, 
-                    angle: 60, 
-                    spread: 55, 
-                    origin: { x: 0 } 
-                });
-                confetti({ 
-                    particleCount: 5, 
-                    angle: 120, 
-                    spread: 55, 
-                    origin: { x: 1 } 
-                });
-                
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            })();
-        }
-
-        function fecharPopUpEGirar() {
-            const popup = document.getElementById('popup');
-            popup.style.opacity = '0';
-            setTimeout(() => {
-                popup.style.display = 'none';
-                toggleGirarButton(false);
-                girarRoleta();
-            }, 300);
-        }
-
-        function redirectToRegistration() {
-            window.location.href = atob("https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=");
-        }
-
-        function updateCountdown() {
-            const minutes = Math.floor(countdownTime / 60);
-            const seconds = countdownTime % 60;
-            
-            const minutesElement = document.getElementById('minutes');
-            const secondsElement = document.getElementById('seconds');
-            
-            if (minutesElement && secondsElement) {
-                minutesElement.textContent = minutes.toString().padStart(2, '0');
-                secondsElement.textContent = seconds.toString().padStart(2, '0');
-            }
-            
-            if (countdownTime > 0) {
-                countdownTime--;
-            } else {
-                countdownTime = 159;
-            }
-        }
-
-        function initCountdown() {
-            updateCountdown();
-            countdownInterval = setInterval(updateCountdown, 1000);
-        }
-
-        function copyText() {
-            const copyText = document.getElementById("shareText");
-            
-            if (!copyText) {
-                console.error('Elemento shareText não encontrado');
-                return;
-            }
-            
-            try {
-                copyText.select();
-                copyText.setSelectionRange(0, 99999);
-                
-                if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(copyText.value).then(() => {
-                        alert("Mensagem copiada! Agora cole no WhatsApp ou SMS.");
-                    }).catch(() => {
-                        document.execCommand("copy");
-                        alert("Mensagem copiada! Agora cole no WhatsApp ou SMS.");
-                    });
-                } else {
-                    document.execCommand("copy");
-                    alert("Mensagem copiada! Agora cole no WhatsApp ou SMS.");
-                }
-            } catch (error) {
-                console.error('Erro ao copiar texto:', error);
-                alert("Erro ao copiar texto. Tente selecionar e copiar manualmente.");
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Inicializando aplicação...');
-            initCountdown();
+                popup.classList.add("show");
+            }, 2500); // mostra popup após girar
         });
 
-        window.addEventListener('beforeunload', function() {
-            if (countdownInterval) {
-                clearInterval(countdownInterval);
-            }
-            const audios = document.querySelectorAll('audio');
-            audios.forEach(audio => {
-                audio.pause();
-                audio.currentTime = 0;
-            });
+        registrarBtn.addEventListener("click", function() {
+            window.open("https://tracking.olabet.co.mz/C.ashx?btag=a_2036b_7c_&affid=1979&siteid=2036&adid=7&c=", "_blank");
         });
     </script>
 </body>
 </html>
-
-
-
