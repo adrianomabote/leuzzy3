@@ -1,125 +1,300 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANAMOLA Prêmios</title>
+    <meta name="description" content="Roleta da Sorte - Gire e Ganhe Prêmios">
+    <title>Roleta da Sorte</title>
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html, body {
-            height: 100%;
-            overflow-x: hidden;
-        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%);
-            color: #333;
-            min-height: 100vh;
-            padding: 15px;
+            font-family: Arial, sans-serif;
+            background-color: #000;
         }
-        .container { max-width: 900px; margin: 0 auto; }
-        .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); animation: slideIn 0.4s ease-out; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        .black-bg { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: white; }
-        h2 { color: #785f03; font-size: 22px; margin-bottom: 12px; text-align: center; }
-        .section p { color: #785f03; font-size: 15px; line-height: 1.5; }
-        .black-bg p, .black-bg .countdown-label { color: #ffd700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-        .anamola-header { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); border-left: 5px solid #785f03; padding: 20px; border-radius: 10px; margin-bottom: 15px; text-align: center; }
-        .anamola-header h1 { color: #ffd700; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        .anamola-header p { color: #ffd700; font-size: 13px; line-height: 1.6; }
-        .roleta-container { display: flex; justify-content: center; align-items: center; margin: 20px 0; position: relative; }
-        #roleta { max-width: 280px; height: auto; border-radius: 50%; box-shadow: 0 15px 40px rgba(9, 102, 45, 0.3); transition: transform 0.1s linear; will-change: transform; }
-        .pointer { position: absolute; top: -12px; width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #785f03; z-index: 10; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
-        .btn-girar { display: block; margin: 20px auto; padding: 16px 45px; font-size: 18px; font-weight: bold; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; border: 3px solid #785f03; border-radius: 50px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4); text-transform: uppercase; letter-spacing: 1px; }
-        .btn-girar:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(9, 102, 45, 0.6); }
-        .btn-girar:active:not(:disabled) { transform: translateY(0); }
-        .btn-girar:disabled { opacity: 0.6; cursor: not-allowed; }
-        .countdown { display: flex; justify-content: center; gap: 30px; margin-top: 15px; }
-        .countdown-item { text-align: center; }
-        .countdown-number { display: block; font-size: 40px; font-weight: bold; color: #ffd700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-        .countdown-label { display: block; font-size: 12px; margin-top: 3px; }
-        .white-bg { background: white; }
-        .instructions ul { list-style: none; padding-left: 0; }
-        .instructions li { color: #785f03; font-size: 15px; margin: 10px 0; padding-left: 25px; position: relative; }
-        .instructions li:before { content: "✓"; position: absolute; left: 0; color: #09662d; font-weight: bold; font-size: 18px; }
-        .prize-list { display: grid; gap: 10px; }
-        .prize-list p { background: rgba(9, 102, 45, 0.1); padding: 12px; border-left: 4px solid #785f03; border-radius: 5px; color: #785f03; font-size: 15px; }
-        .share-section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); border-top: 5px solid #09662d; }
-        .share-section h2 { color: #09662d; }
-        .share-section p { color: #785f03; }
-        .share-section a { color: #09662d; text-decoration: none; font-weight: bold; }
-        .share-input { background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px solid #09662d; }
-        #shareText { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #785f03; border-radius: 6px; font-size: 13px; color: #785f03; }
-        .copy-btn { background: #09662d; color: #ffd700; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 8px; transition: all 0.2s ease; font-size: 14px; }
-        .copy-btn:hover { background: #0d8c3d; transform: translateY(-1px); }
-        .whatsapp-btn { display: inline-block; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: all 0.2s ease; box-shadow: 0 5px 15px rgba(9, 102, 45, 0.3); font-size: 14px; }
-        .whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(9, 102, 45, 0.4); }
-        .footer { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; text-align: center; padding: 20px; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 25px rgba(9, 102, 45, 0.15); }
-        .footer p { margin: 8px 0; color: #ffd700; font-size: 12px; }
-        .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease; }
-        .popup-content { background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); padding: 35px; border-radius: 18px; text-align: center; max-width: 400px; color: #ffd700; box-shadow: 0 10px 35px rgba(0,0,0,0.3); }
-        .popup-content h2 { margin-bottom: 15px; font-size: 24px; color: #ffd700; }
-        .popup-content p { margin-bottom: 20px; font-size: 15px; color: #ffd700; }
-        .popup-content button { padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 50px; border: none; cursor: pointer; background: linear-gradient(135deg, #09662d 0%, #0d8c3d 100%); color: #ffd700; transition: all 0.2s ease; }
-        .popup-content button:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
-        .popup.show { display: flex; opacity: 1; }
+        
+        .intro {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        .main-section {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .main-section h2 {
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .main-section p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .wheel-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        #roleta {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%) rotate(180deg);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 30px solid red;
+        }
+        
+        #girarBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: orange;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        #girarBtn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            text-align: center;
+            z-index: 9999;
+        }
+        
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+        
+        .popup-content h3 {
+            margin-bottom: 15px;
+        }
+        
+        #popupText {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        #popupButton {
+            background: orange;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="anamola-header">
-            <h1>ANAMOLA</h1>
-            <p>Gire a roleta e descubra o seu prêmio! Participe agora e ganhe!</p>
+    
+    <!-- SEÇÃO 1: TEXTO DE INTRODUÇÃO -->
+    <section class="intro">
+        <p>Tens 1 tentativa grátis para girar a roleta. Não custa nada, clique no botão girar!</p>
+    </section>
+
+    <!-- SEÇÃO 2: ROLETA INTERATIVA -->
+    <section class="main-section">
+        <h2>🎯 Tente a sua sorte! 🎯</h2>
+        <p>Clique no botão e gire a roleta para ganhar prêmios!</p>
+
+        <div class="wheel-container">
+            <img src="https://imgur.com/cQc9WWa.png" alt="Roleta" id="roleta">
+            <div class="arrow"></div>
         </div>
 
-        <div class="section roleta-container">
-            <div class="pointer"></div>
-            <img src="roleta.png" id="roleta" alt="Roleta">
-        </div>
+        <button id="girarBtn" onclick="girarRoleta()">🎪 GIRAR</button>
+    </section>
 
-        <button class="btn-girar" id="btnGirar">GIRAR</button>
-
-        <div class="section instructions">
-            <h2>Como Participar:</h2>
-            <ul>
-                <li>Clique em "GIRAR" para iniciar a roleta.</li>
-                <li>Espere a roleta parar e veja qual prêmio você ganhou.</li>
-                <li>Clique em "Registrar Agora" para resgatar seu prêmio.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="popup" id="popup">
+    <!-- POPUP DE RESULTADO -->
+    <div id="popup">
         <div class="popup-content">
-            <h2>🎉 Parabéns! 🎉</h2>
-            <p>Você ganhou! Clique abaixo para registrar seu prêmio agora.</p>
-            <button id="registrar">Registrar Agora</button>
+            <h3>🎉 Resultado 🎉</h3>
+            <p id="popupText"></p>
+            <a id="popupButton" href="https://media1.placard.co.mz/redirect.aspx?pid=4939&bid=1690" target="_blank" style="display:none;">
+                💰 REGISTRE-SE AGORA!
+            </a>
         </div>
     </div>
 
+    <!-- ÁUDIOS -->
+    <audio id="roletaSom" preload="none">
+        <source src="https://raw.githubusercontent.com/FUTURE098/audio-roleta/main/Roleta.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="victorySom" preload="none">
+        <source src="https://raw.githubusercontent.com/FUTURE098/audio-roleta/main/Celebration.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p><strong>Termos de Uso e Direitos Reservados</strong></p>
+        <p><em>© 2025 apostasdemoz.site – Todos os direitos reservados.</em></p>
+    </footer>
+
+    <!-- BIBLIOTECA DE CONFETES -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js" defer></script>
+
+    <!-- SCRIPT PRINCIPAL DA ROLETA -->
     <script>
-        const btnGirar = document.getElementById("btnGirar");
-        const roleta = document.getElementById("roleta");
-        const popup = document.getElementById("popup");
-        const registrarBtn = document.getElementById("registrar");
+        let tentativas = 0;
 
-        btnGirar.addEventListener("click", () => {
-            const deg = Math.floor(Math.random() * 360);
-            roleta.style.transform = `rotate(${deg + 720}deg)`; // gira 2 voltas + grau aleatório
-            btnGirar.disabled = true;
+        function girarRoleta() {
+            const roleta = document.getElementById('roleta');
+            const som = document.getElementById('roletaSom');
+            
+            tentativas++;
+
+            // Única tentativa: ganha 5.000 MT
+            const anguloFinal = 320 + 24 * 360;
+            const tempoGiro = 8;
+
+            // Inicia o som da roleta
+            som.currentTime = 0;
+            som.volume = 1;
+            som.play().catch(() => {}); // Ignora erros de autoplay
+
+            // Aplica a animação de rotação
+            roleta.style.transition = `transform ${tempoGiro}s cubic-bezier(0.1, 0.8, 0.3, 1)`;
+            roleta.style.transform = `rotate(${anguloFinal}deg)`;
+
+            // Desabilita o botão durante o giro
+            document.getElementById('girarBtn').disabled = true;
+
+            // Sistema de fade-out do volume do áudio
+            let steps = 40;
+            let delay = (tempoGiro * 1000) / steps;
+            let stepCount = 0;
+
+            const volumeFade = setInterval(() => {
+                if (stepCount >= steps) {
+                    clearInterval(volumeFade);
+                } else {
+                    som.volume = Math.max(0, 1 - stepCount / steps);
+                    stepCount++;
+                }
+            }, delay);
+
+            // Após o término do giro, para o som e mostra o popup
             setTimeout(() => {
-                popup.classList.add("show");
-            }, 2500); // mostra popup após girar
-        });
+                som.pause();
+                setTimeout(showPopUp, 500);
+            }, tempoGiro * 1000);
+        }
 
-        registrarBtn.addEventListener("click", function() {
-            window.open("https://media1.placard.co.mz/redirect.aspx?pid=4939&bid=1690", "_blank");
-        });
+        function showPopUp() {
+            const botaoRegistro = document.getElementById('popupButton');
+
+            const texto = `
+                🤑 Parabéns! Você ganhou <b>5.000 Meticais!</b><br><br>
+                Para receber, registre-se na plataforma clicando no botão abaixo e 
+                <b>deposite 20 ou 50 Meticais</b> para que possamos confirmar seu número 
+                e enviar o valor.<br><br>
+                ⚠️ <b>O prêmio só será entregue para quem criar uma nova conta na plataforma.</b><br>
+                Se já possui uma conta, é necessário criar uma nova para receber o valor 
+                na sua carteira móvel!
+            `;
+            
+            botaoRegistro.style.display = "inline-block";
+
+            // Toca som de vitória
+            const victory = document.getElementById('victorySom');
+            victory.currentTime = 0;
+            victory.play().catch(() => {});
+
+            // Inicia animação de confetes
+            if (typeof confetti !== 'undefined') {
+                startConfetti();
+            }
+
+            // Atualiza o texto do popup e o exibe
+            document.getElementById('popupText').innerHTML = texto;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function startConfetti() {
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+            
+            (function frame() {
+                confetti({ 
+                    particleCount: 5, 
+                    angle: 60, 
+                    spread: 55, 
+                    origin: { x: 0 } 
+                });
+                
+                confetti({ 
+                    particleCount: 5, 
+                    angle: 120, 
+                    spread: 55, 
+                    origin: { x: 1 } 
+                });
+                
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
     </script>
+
 </body>
 </html>
 
